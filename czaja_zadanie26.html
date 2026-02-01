@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikołaj Czaja</title>
+</head>
+
+<body>
+
+<h2>KOD HTML</h2>
+
+<textarea cols="150" rows="35">
+<head>
+  <meta charset="UTF-8">
+  <title>Obliczenia trapezu</title>
+
+  <style>
+    body {
+      font-family: Verdana, sans-serif;
+      background-color: #e6eef5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 400px;
+      margin: 60px auto;
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #cfd8dc;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 6px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 8px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+    }
+  </style>
+
+  <script>
+    function poleTrapezu(a, b, h) {
+      return (a + b) * h / 2;
+    }
+
+    function obwodTrapezu(a, b, h) {
+      var r = Math.abs(a - b) / 2;
+      var bok = Math.sqrt(h * h + r * r);
+      return a + b + 2 * bok;
+    }
+
+    function oblicz(e) {
+      e.preventDefault();
+
+      var a = parseFloat(document.forms[0].a.value);
+      var b = parseFloat(document.forms[0].b.value);
+      var h = parseFloat(document.forms[0].h.value);
+
+      document.getElementById("pole").innerText =
+        poleTrapezu(a, b, h).toFixed(2);
+
+      document.getElementById("obwod").innerText =
+        obwodTrapezu(a, b, h).toFixed(2);
+    }
+  </script>
+</head>
+
+<body>
+  <div class="box">
+    <h1>Pole i obwód trapezu</h1>
+
+    <form onsubmit="oblicz(event)">
+      <label>a: <input type="number" name="a"></label>
+      <label>b: <input type="number" name="b"></label>
+      <label>h: <input type="number" name="h"></label>
+      <input type="submit" value="Oblicz">
+    </form>
+
+    <p>Pole: <span id="pole"></span></p>
+    <p>Obwód: <span id="obwod"></span></p>
+  </div>
+</body>
+</textarea>
+
+</body>
+</html>

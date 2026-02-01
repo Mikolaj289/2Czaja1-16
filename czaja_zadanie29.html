@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadanie 29 – JS</title>
+</head>
+<body>
+
+<h1>Zadanie 29 – JavaScript</h1>
+
+<h2>1. Jak sprawdzić właściwości obiektu?</h2>
+<p>Można kropką np. <code>auto.marka = "Opel"</code> albo tablicowo <code>auto["rok"] = 1996</code></p>
+
+<h2>2. Odwoływanie się do pól i metod</h2>
+<p>Robimy to przez kropkę: <code>osoba.imie</code>, <code>osoba.pokaz()</code></p>
+
+<h2>3. Cechy konstruktora</h2>
+<p>Funkcja tworząca obiekt, może mieć parametry, używa się <code>new</code>, nie zwraca nic</p>
+
+<h2>4. Obiekt – przykład</h2>
+<pre>
+var osoba = {
+  imie: "Mikołaj",
+  nazwisko: "Czaja",
+  zawod: "uczeń",
+  pokaz: function(){ console.log(this.imie + " " + this.nazwisko) }
+}
+osoba.pokaz();
+</pre>
+
+<h2>5. Znaczenie this</h2>
+<p>Odwołuje się do aktualnego obiektu w którym jesteśmy</p>
+
+<h2>6. Konstruktor w JS</h2>
+<pre>
+function Klient(imie, nazwisko, zawod){
+  this.imie = imie
+  this.nazwisko = nazwisko
+  this.zawod = zawod
+}
+var k = new Klient("Mikołaj", "Czaja", "uczeń")
+</pre>
+
+<h2>7. Słowo kluczowe new</h2>
+<p>Tworzy nowy obiekt: <code>var o = new Klient("Anna", "Nowak", "kierowca")</code></p>
+
+<h2>8. Właściwość prototype</h2>
+<pre>
+Klient.prototype.pokaz = function(){
+  console.log(this.imie + " " + this.nazwisko)
+}
+</pre>
+
+</body>
+</html>

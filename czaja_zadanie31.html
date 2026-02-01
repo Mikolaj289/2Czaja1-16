@@ -1,0 +1,38 @@
+<html>
+<head>
+<script type="text/javascript">
+var Wiezowiec={
+ ile_pieter:'35',
+ winda:'jest',
+ nazwa_wiezowca:'Mikolaj Tower',
+ Wiezowiec_wyswietl_Czaja:function(){
+  document.write(
+   "winda: "+this.winda+"<br>"+
+   "nazwa_wiezowca: "+this.nazwa_wiezowca+"<br>"+
+   "ile_pieter: "+this.ile_pieter+"<br>"
+  );
+ }
+};
+
+Wiezowiec.Wiezowiec_wyswietl_Czaja();
+Wiezowiec.biura=420;
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){
+ alert("ilość biur: "+this.biura);
+};
+Wiezowiec.Wiezowiec_pokaz_Czaja();
+</script>
+</head>
+
+<body>
+<br>
+Programowanie obiektowe.<br>
+Obiekt to Wiezowiec<br>
+Pola:<br>
+ile_pieter<br>
+winda<br>
+nazwa_wiezowca<br>
+metoda: Wiezowiec_wyswietl_Czaja<br>
+nowe pole: biura<br>
+nowa metoda: Wiezowiec_pokaz_Czaja()<br>
+</body>
+</html>

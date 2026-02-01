@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 26 KOD</title>
+</head>
+
+<body>
+
+<h2></h2>
+
+<textarea cols="150" rows="40" readonly>
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    Obliczenia pola i obwodu
+  &lt;/title&gt;
+
+  &lt;script language="JavaScript"&gt;
+    function calcHypotenuse(d, x) {
+      return Math.sqrt(d ** 2 + x ** 2);
+    }
+
+    function findAngle(d, x) {
+      const radian = Math.atan(d / x);
+      const degree = radian * (180 / Math.PI);
+      return degree;
+    }
+
+    function calcHypoAngle(event) {
+      event.preventDefault();
+
+      const d = parseFloat(document.querySelector('[name="D"]').value);
+      const x = parseFloat(document.querySelector('[name="X"]').value);
+
+      const hypo = calcHypotenuse(d, x);
+      const alfa = findAngle(d, x);
+
+      document.querySelector('#wyprowadz_drabina').textContent = hypo.toFixed(2);
+      document.querySelector('#wyprowadz_alfa').textContent = alfa.toFixed(2);
+    }
+  &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div style="color: blue; background-color: lightgray;"&gt;
+    &lt;script language="JavaScript"&gt;
+      const x1_luk = Number(prompt("x1"));
+      const x2_luk = Number(prompt("x2"));
+
+      const x1Radian = x1_luk * (Math.PI / 180);
+      const y1 = 3 * x1_luk;
+      const y2 = 2 * Math.cos(x1Radian) + 3 * Math.sin(x1Radian);
+      const y3 = Math.abs(x1_luk * 5 + 2 * x2_luk ** 4);
+
+      document.write("x1=" + x1_luk.toFixed(2) + "&lt;br&gt;");
+      document.write("x2=" + x2_luk.toFixed(2) + "&lt;br&gt;");
+      document.write("y1=" + y1.toFixed(2) + "&lt;br&gt;");
+      document.write("y2=" + y2.toFixed(2) + "&lt;br&gt;");
+      document.write("y3=" + y3.toFixed(2) + "&lt;br&gt;");
+    &lt;/script&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+
+</body>
+</html>

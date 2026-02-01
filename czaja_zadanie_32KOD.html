@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikołaj Czaja - Kod Wiezowiec</title>
+</head>
+<body>
+
+<textarea cols="150" rows="40">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Zadanie 32&lt;/title&gt;
+
+&lt;script type="text/javascript"&gt;
+function Wiezowiec(nazwa,pietra,winda,miejsca){
+ this.nazwa_wiezowca=nazwa;
+ this.ile_pieter=pietra;
+ this.winda=winda;
+ this.miejsca=miejsca;
+}
+
+Wiezowiec.prototype.wypisz=function(){
+ document.write(
+  this.nazwa_wiezowca+" "+
+  this.ile_pieter+" "+ 
+  this.winda+" "+ 
+  this.miejsca+"&lt;br&gt;"
+ );
+};
+
+var w1=new Wiezowiec("Mikolaj Tower",27,"winda",512);
+var w2=new Wiezowiec("SkyTower",49,"winda",800);
+var w3=new Wiezowiec("Varso",53,"winda",1200);
+
+Wiezowiec.kraj="Polska";
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){
+ alert("Kraj: "+this.kraj);
+};
+
+function zadanie(){
+ w1.wypisz(); w2.wypisz(); w3.wypisz();
+ document.write("&lt;br&gt;Dostęp do właściwości:&lt;br&gt;");
+ document.write(w1.nazwa_wiezowca+" "+w1.ile_pieter+"&lt;br&gt;");
+ document.write(w2.nazwa_wiezowca+" "+w2.ile_pieter+"&lt;br&gt;");
+ document.write(w3.nazwa_wiezowca+" "+w3.ile_pieter+"&lt;br&gt;");
+ Wiezowiec.Wiezowiec_pokaz_Czaja();
+}
+
+function kod(){
+ document.getElementById("kod").style.display="block";
+}
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;button onclick="zadanie()"&gt;Zadanie&lt;/button&gt;
+&lt;button onclick="kod()"&gt;Kod&lt;/button&gt;
+&lt;br&gt;&lt;br&gt;
+
+&lt;pre id="kod" style="display:none;"&gt;
+function Wiezowiec(nazwa,pietra,winda,miejsca){...}
+Wiezowiec.prototype.wypisz=function(){...}
+var w1=new Wiezowiec(...);
+var w2=new Wiezowiec(...);
+var w3=new Wiezowiec(...);
+Wiezowiec.kraj="Polska";
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){...}
+&lt;/pre&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+
+</body>
+</html>

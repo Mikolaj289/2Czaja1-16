@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Mikołaj Czaja - Kod Wiezowiec Obiekt</title>
+</head>
+<body>
+
+<textarea cols="150" rows="40">
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type="text/javascript"&gt;
+var Wiezowiec={
+ ile_pieter:'35',
+ winda:'jest',
+ nazwa_wiezowca:'Mikolaj Tower',
+ Wiezowiec_wyswietl_Czaja:function(){
+  document.write(
+   "winda: "+this.winda+"&lt;br&gt;"+
+   "nazwa_wiezowca: "+this.nazwa_wiezowca+"&lt;br&gt;"+
+   "ile_pieter: "+this.ile_pieter+"&lt;br&gt;"
+  );
+ }
+};
+
+Wiezowiec.Wiezowiec_wyswietl_Czaja();
+Wiezowiec.biura=420;
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){
+ alert("ilość biur: "+this.biura);
+};
+Wiezowiec.Wiezowiec_pokaz_Czaja();
+&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;br&gt;
+Programowanie obiektowe.&lt;br&gt;
+Obiekt to Wiezowiec&lt;br&gt;
+Pola:&lt;br&gt;
+ile_pieter&lt;br&gt;
+winda&lt;br&gt;
+nazwa_wiezowca&lt;br&gt;
+metoda: Wiezowiec_wyswietl_Czaja&lt;br&gt;
+nowe pole: biura&lt;br&gt;
+nowa metoda: Wiezowiec_wyswietl_Czaja()&lt;br&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</textarea>
+
+</body>
+</html>

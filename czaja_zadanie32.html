@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 32</title>
+
+<script type="text/javascript">
+function Wiezowiec(nazwa,pietra,winda,miejsca){
+ this.nazwa_wiezowca=nazwa;
+ this.ile_pieter=pietra;
+ this.winda=winda;
+ this.miejsca=miejsca;
+}
+
+Wiezowiec.prototype.wypisz=function(){
+ document.write(
+  this.nazwa_wiezowca+" "+
+  this.ile_pieter+" "+
+  this.winda+" "+
+  this.miejsca+"<br>"
+ );
+};
+
+var w1=new Wiezowiec("Mikolaj Tower",27,"winda",512);
+var w2=new Wiezowiec("SkyTower",49,"winda",800);
+var w3=new Wiezowiec("Varso",53,"winda",1200);
+
+Wiezowiec.kraj="Polska";
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){
+ alert("Kraj: "+this.kraj);
+};
+
+function zadanie(){
+ w1.wypisz(); w2.wypisz(); w3.wypisz();
+ document.write("<br>Dostęp do właściwości:<br>");
+ document.write(w1.nazwa_wiezowca+" "+w1.ile_pieter+"<br>");
+ document.write(w2.nazwa_wiezowca+" "+w2.ile_pieter+"<br>");
+ document.write(w3.nazwa_wiezowca+" "+w3.ile_pieter+"<br>");
+ Wiezowiec.Wiezowiec_pokaz_Czaja();
+}
+
+function kod(){
+ document.getElementById("kod").style.display="block";
+}
+</script>
+</head>
+
+<body>
+
+<button onclick="zadanie()">Zadanie</button>
+<button onclick="kod()">Kod</button>
+<br><br>
+
+<pre id="kod" style="display:none;">
+function Wiezowiec(nazwa,pietra,winda,miejsca){...}
+Wiezowiec.prototype.wypisz=function(){...}
+var w1=new Wiezowiec(...);
+var w2=new Wiezowiec(...);
+var w3=new Wiezowiec(...);
+Wiezowiec.kraj="Polska";
+Wiezowiec.Wiezowiec_pokaz_Czaja=function(){...}
+</pre>
+
+</body>
+</html>
+

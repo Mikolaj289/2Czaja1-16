@@ -1,0 +1,137 @@
+<html>
+
+<head>
+  <title>Obliczenia wysokości i kąta</title>
+  <style>
+    body {
+      font-family: 'Verdana', sans-serif;
+      background-color: #e0f7fa;
+      margin: 20px;
+      padding: 20px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00796b;
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    form {
+      background-color: #b2ebf2;
+      padding: 25px;
+      border: 2px solid #004d40;
+      width: 350px;
+      margin: auto;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 15px;
+      font-weight: bold;
+      color: #004d40;
+    }
+
+    input[type="number"] {
+      width: 90%;
+      padding: 8px;
+      font-size: 16px;
+      border: 2px solid #00796b;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+      background-color: #004d40;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00796b;
+    }
+
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 40%;
+      background-color: #b2dfdb;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid #004d40;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    th {
+      background-color: #00796b;
+      color: white;
+    }
+
+    #wyprowadz_h, #wyprowadz_kat {
+      font-weight: bold;
+      font-size: 18px;
+      color: #004d40;
+    }
+  </style>
+  <script>
+    function heightLukiv(odl_Luk, s_Luk) {
+      return Math.sqrt(s_Luk ** 2 - odl_Luk ** 2);
+    }
+
+    function angleLukiv(odl_Luk, s_Luk) {
+      const radian = Math.acos(odl_Luk / s_Luk);
+      return radian * (180 / Math.PI);
+    }
+
+    function calcPoleObwod(event) {
+      event.preventDefault();
+      const odl_Luk = parseFloat(document.querySelector('[name="odl_dana_luk"]').value);
+      const s_Luk = parseFloat(document.querySelector('[name="s_dana_luk"]').value);
+
+      const pole = heightLukiv(odl_Luk, s_Luk);
+      const obwod = angleLukiv(odl_Luk, s_Luk);
+
+      document.querySelector('#wyprowadz_h').textContent = pole.toFixed(2);
+      document.querySelector('#wyprowadz_kat').textContent = obwod.toFixed(2);
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Oblicz wysokość i kąt</h1>
+
+  <form onsubmit="calcPoleObwod(event)">
+    <label>Podaj odległość:
+      <input type="number" step="0.001" name="odl_dana_luk">
+    </label>
+
+    <label>Podaj s:
+      <input type="number" step="0.001" name="s_dana_luk">
+    </label>
+
+    <input type="submit" value="Oblicz">
+  </form>
+
+  <table>
+    <tr>
+      <th>Wysokość</th>
+      <td id="wyprowadz_h"></td>
+    </tr>
+    <tr>
+      <th>Kąt startu</th>
+      <td id="wyprowadz_kat"></td>
+    </tr>
+  </table>
+</body>
+
+</html>
