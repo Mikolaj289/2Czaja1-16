@@ -1,18 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Mikołaj Czaja</title>
-</head>
-
-<body>
-
-<h2>KOD HTML</h2>
-
-<textarea cols="150" rows="35">
-<head>
   <meta charset="UTF-8">
-  <title>Obliczenia trapezu</title>
+  <title>Mikolaj Czaja zadanie 26</title>
 
   <style>
     body {
@@ -53,6 +43,7 @@
       background-color: #3498db;
       color: white;
       border: none;
+      cursor: pointer;
     }
   </style>
 
@@ -88,9 +79,9 @@
     <h1>Pole i obwód trapezu</h1>
 
     <form onsubmit="oblicz(event)">
-      <label>a: <input type="number" name="a"></label>
-      <label>b: <input type="number" name="b"></label>
-      <label>h: <input type="number" name="h"></label>
+      <label>a: <input type="number" name="a" required></label>
+      <label>b: <input type="number" name="b" required></label>
+      <label>h: <input type="number" name="h" required></label>
       <input type="submit" value="Oblicz">
     </form>
 
@@ -98,7 +89,6 @@
     <p>Obwód: <span id="obwod"></span></p>
   </div>
 </body>
-</textarea>
-
-</body>
 </html>
+
+
