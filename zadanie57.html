@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<title>Zadanie 57</title>
+</head>
+<body>
+
+<h2>Zadanie 57</h2>
+
+<label>Numer od:
+    <input type="number" id="start">
+</label>
+<br><br>
+
+<label>Numer do:
+    <input type="number" id="end">
+</label>
+<br><br>
+
+<button onclick="oblicz()">Oblicz</button>
+
+<pre id="wynik"></pre>
+
+<script>
+function oblicz() {
+
+    let od_cza = Number(document.getElementById("start").value);
+    let do_cza = Number(document.getElementById("end").value);
+
+    let tekst_cza = "";
+
+    for (let i_cza = od_cza; i_cza <= do_cza; i_cza++) {
+
+        let pierw2_cza = Math.sqrt(i_cza).toFixed(2);
+        let pierw4_cza = Math.pow(i_cza, 0.25).toFixed(2);
+
+        tekst_cza += "i=" + i_cza +
+                     "   pierw_2(" + i_cza + ")=" + pierw2_cza +
+                     "   pierw_4(" + i_cza + ")=" + pierw4_cza +
+                     "\n";
+    }
+
+    document.getElementById("wynik").textContent = tekst_cza;
+}
+</script>
+
+</body>
+</html>
