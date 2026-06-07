@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<body>
+<script>
+var l1_t_cza, l2_t_cza;
+
+do {
+    l1_t_cza = parseInt(prompt("l1 <20,60>:"));
+    if (l1_t_cza < 20 || l1_t_cza > 60) alert("liczba l1 nie należy do przedziału <20,60>");
+} while (l1_t_cza < 20 || l1_t_cza > 60);
+
+do {
+    l2_t_cza = parseInt(prompt("l2 <20,60>:"));
+    if (l2_t_cza < 20 || l2_t_cza > 60) alert("liczba l2 nie należy do przedziału <20,60>");
+} while (l2_t_cza < 20 || l2_t_cza > 60);
+
+var pocz_cza = parseInt(prompt("Wielkość:")), tekst_cza = prompt("Tekst:");
+var wynik = "";
+
+if (l1_t_cza < l2_t_cza) {
+    for (var i = pocz_cza; i <= 100; i += 5) wynik += "<p style='font-size:" + i + "px'>" + tekst_cza + "</p>";
+} else if (l2_t_cza < l1_t_cza) {
+    for (var i = pocz_cza; i >= 0; i -= 5) wynik += "<p style='font-size:" + i + "px'>" + tekst_cza + "</p>";
+} else {
+    wynik += "<p style='font-size:" + pocz_cza + "px'>" + tekst_cza + "</p>";
+}
+
+document.body.innerHTML = wynik;
+</script>
+</body>
+</html>
