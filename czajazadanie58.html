@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pierwiastki</title>
+</head>
+<body>
+<h1>Obliczanie pierwiastków</h1>
+<pre id="output"></pre>
+
+<script>
+let numer = Number(prompt("Podaj numer w dzienniku"));
+let wynik = "";
+
+for (let i = numer; i <= numer + 15; i++) {
+    let pierw_2 = Math.sqrt(i);
+    let pierw_4 = Math.sqrt(pierw_2);
+
+    wynik +=
+        "l=" + i +
+        "    pierw_2(" + i + ")=" + pierw_2.toFixed(2) +
+        "    pierw_4(" + i + ")=" + pierw_4.toFixed(2) +
+        "\n";
+}
+
+document.getElementById("output").textContent = wynik;
+console.log(wynik);
+</script>
+</body>
+</html>
