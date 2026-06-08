@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
@@ -6,28 +6,28 @@
 <title>Obliczenia JavaScript</title>
 </head>
 <body>
-<h1>Wyniki obliczeń</h1>
-<pre id="output"></pre>
+<h1>zadanie57</h1>
+<pre id="output_cza"></pre>
 
 <script>
-let liczenie = 0;
-let wynik = "";
+let liczenie_cza = 0;
+let wynik_cza = "";
 
-for (let i = 0; i < 40; i++) {
-    let w = i * i + i + 41;
+for (let i_cza = 0; i_cza < 40; i_cza++) {
+    let w_cza = i_cza * i_cza + i_cza + 41;
 
-    wynik += "i=" + i + "    w(" + i + ")=" + w + "\n";
+    wynik_cza += "i=" + i_cza + "    w(" + i_cza + ")=" + w_cza + "\n";
 
-    liczenie++;
+    liczenie_cza++;
 
-    if (liczenie == 5) {
-        wynik += "----------------\n";
-        liczenie = 0;
+    if (liczenie_cza == 5) {
+        wynik_cza += "----------------\n";
+        liczenie_cza = 0;
     }
 }
 
-document.getElementById("output").textContent = wynik;
-console.log(wynik);
+document.getElementById("output_cza").textContent = wynik_cza;
+console.log(wynik_cza);
 </script>
 </body>
 </html>
