@@ -6,26 +6,26 @@
 <title>Pierwiastki</title>
 </head>
 <body>
-<h1>Obliczanie pierwiastków</h1>
-<pre id="output"></pre>
+<h1>zadanie58</h1>
+<pre id="output_cza"></pre>
 
 <script>
-let numer = Number(prompt("Podaj numer w dzienniku"));
-let wynik = "";
+let numer_cza = Number(prompt("Podaj numer w dzienniku"));
+let wynik_cza = "";
 
-for (let i = numer; i <= numer + 15; i++) {
-    let pierw_2 = Math.sqrt(i);
-    let pierw_4 = Math.sqrt(pierw_2);
+for (let i_cza = numer_cza; i_cza <= numer_cza + 15; i_cza++) {
+    let pierw_2_cza = Math.sqrt(i_cza);
+    let pierw_4_cza = Math.sqrt(pierw_2_cza);
 
-    wynik +=
-        "l=" + i +
-        "    pierw_2(" + i + ")=" + pierw_2.toFixed(2) +
-        "    pierw_4(" + i + ")=" + pierw_4.toFixed(2) +
+    wynik_cza +=
+        "l=" + i_cza +
+        "    pierw_2(" + i_cza + ")=" + pierw_2_cza.toFixed(2) +
+        "    pierw_4(" + i_cza + ")=" + pierw_4_cza.toFixed(2) +
         "\n";
 }
 
-document.getElementById("output").textContent = wynik;
-console.log(wynik);
+document.getElementById("output_cza").textContent = wynik_cza;
+console.log(wynik_cza);
 </script>
 </body>
 </html>
